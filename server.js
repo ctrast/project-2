@@ -53,7 +53,7 @@ app.use(expressLayouts);
 app.use(express.static("public"));
 app.use("/ingredients", require("./controllers/ingredientsController"));
 app.use("/recipes", require("./controllers/recipesController"));
-
+app.use("/recipeIngredient", require("./controllers/recipeIngredientsController"));
 
 
 //___________________

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <%- include ('../partials/head.ejs') %>
+</head>
+
+<body>
+  <nav>
+    <%- include ('../partials/nav.ejs') %>
+  </nav>
+  <div class="container">
+    <h3>Add Recipe</h3>
+    <form action="/recipes" method="POST" form="logForm">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required />
+      <label for="instruction">Directions:</label>
+      <textarea name="entry" form="logForm" id="instruction"></textarea>
+      <input type="submit" value="Add Recipe"><br><br>
+    </form>
+
+    <form action="/recipeIngredient" method="POST" form="ingredientForm">
+     
+      <label for="measureqty">Measurement Amount</label>
+      <select style="display: block;" id="measureqty" name="measureqty">
+        <option value="none" selected>--Please choose a MEASURE AMOUNT--</option>
+        <option value="1/4">1/4</option>
+        <option value="1/2">1/2</option>
+        <option value="3/4">3/4</option>
+        <option value="1">1</option>
+        <option value="1 1/4">1 1/4</option>
+        <option value="1 1/2">1 1/2</option>
+        <option value="1 3/4">1 3/4</option>
+        <option value="2">2</option>
+      </select>
+      <label for="measuretype">Measurement Type</label>
+      <select style="display: block;" id="measuretype" name="measuretype">
+        <option value="none" selected>--Please choose a MEASURE TYPE--</option>
+        <option value="TSP">TSP</option>
+        <option value="TBLS">TBLS</option>
+        <option value="CUP">CUP</option>
+        <option value="OUNCE">OUNCE</option>
+        <option value="PINT">PINT</option>
+        <option value="QUART">QUART</option>
+        <option value="GALLON">GALLON</option>
+      </select>
+      <label for="ingredient">Ingredients</label>
+      <select style="display: block;" id="ingredient" name="ingredient">
+        <option value="none" selected>--Please choose an INGREDIENT--</option>
+        <% for (let i=0; i<ingredients.length; i++) { %>
+        <option value="<%=ingredients[i]._id%>"><%=ingredients[i].name%></option>
+        <% } %>
+      </select>
+      <br><br>
+      <input type="submit" value="Add Ingredient"><br><br>
+      <form>
+        <br>
+        <p>To add an ingredient, select the ingredient, the amount, type of measurement, then click add ingredient.</p>
+  </div>
+
+  <!-- The second value will be selected initially -->
+
+</body>
+
+</html>
