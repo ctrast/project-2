@@ -5,14 +5,14 @@ const recipeIngredientSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Ingredient",
     },
-    measuretype: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "MeasureType",
-    },
+    measuretype:{
+        type:String,
+        default: '',
+      },
     measureqty: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "MeasureQTY",
-    },
+        type:String,
+        default: '',
+      },
   },
   { timestamps: true }
 );
