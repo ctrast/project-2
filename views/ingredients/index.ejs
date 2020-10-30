@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../partials/head.ejs') %>
+  </head>
+  <body>
+    <nav>
+      <%- include ('../partials/nav.ejs') %>
+    </nav>
+    <div class="container">
+        <h3>View Ingredients</h3>
+        <% ingredients.sort((a, b) => a.name.localeCompare(b.name));%>
+      <ul>
+        <% for (let ingredient of ingredients ) { %>
+          <li>
+            <a href="/ingredients/<%=ingredient.id%>">
+              <%= ingredient.name %>
+          </li>
+       <% } %>
+      </ul>
+    </div>
+  </body>
+</html>

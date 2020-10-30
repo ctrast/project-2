@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../partials/head.ejs') %>
+  </head>
+  <body>
+    <nav>
+      <%- include ('../partials/nav.ejs') %>
+    </nav>
+    <div class="container">
+      <ul>
+        <% for (let recipe of recipes ) { %>
+          <li>
+            <a href="/recipes/<%=recipe.id%>">
+              <%= recipe.name %>
+              <br>
+              <%=recipse.instructions%>
+          </li>
+       <% } %>
+      </ul>
+    </div>
+  </body>
+</html>
