@@ -11,7 +11,6 @@ const Ingredient = require("../models/ingredients.js");
 
 // UPDATE
 router.put("/:id", (req, res) => {
-    console.log(req.id,req.body)
   Ingredient.findByIdAndUpdate(
     req.params.id,
     req.body,
