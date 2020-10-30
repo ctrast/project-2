@@ -44,6 +44,8 @@ db.on("open", () => {});
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.urlencoded({ extended: true })); // extended: false - does not allow nested objects in query strings
 app.use(express.json()); // returns middleware that only parses JSON - may or may not need it depending on your project
+//use method override
+app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 
 //use public folder for static assets
 app.set("view engine", "ejs");
@@ -52,8 +54,7 @@ app.use(express.static("public"));
 app.use("/ingredients", require("./controllers/ingredientsController"));
 app.use("/recipes", require("./controllers/recipesController"));
 
-//use method override
-app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
+
 
 //___________________
 // Routes
