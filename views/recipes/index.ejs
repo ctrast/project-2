@@ -11,11 +11,10 @@
       <ul>
         <% for (let recipe of recipes ) { %>
           <li>
-            <a href="/recipes/<%=recipe.id%>">
-              <%= recipe.name %>
-
-              <br>
-              <%=recipe.instructions%>
+            <a href="/recipes/<%=recipe.id%>" >
+              <%= recipe.name %><br><br>
+              <%=recipe.createdAt%><br>
+              <%=recipe.instruction%>
           </li>
        <% } %>
       </ul>
