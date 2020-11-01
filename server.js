@@ -48,9 +48,9 @@ app.use(express.json()); // returns middleware that only parses JSON - may or ma
 app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 
 //use public folder for static assets
+app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(expressLayouts);
-app.use(express.static("public"));
 app.use("/ingredients", require("./controllers/ingredientsController"));
 app.use("/recipes", require("./controllers/recipesController"));
 app.use("/recipeIngredient", require("./controllers/recipeIngredientsController"));
