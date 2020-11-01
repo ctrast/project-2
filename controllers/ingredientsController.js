@@ -63,8 +63,12 @@ router.get("/:id/edit", async (req, res) => {
 
 //INDEX
 router.get("/", async (req, res) => {
+  try{
   let ingredients = await Ingredient.find();
   res.render("ingredients/index.ejs", { ingredients });
+  }catch(error) {
+    res.send(error);
+  }
 });
 
 // CREATE A NEW INGREDIENT
@@ -72,6 +76,16 @@ router.post("/", async (req, res) => {
   try {
     let newIngredient = await Ingredient.create(req.body);
     res.redirect("/ingredients/new");
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+//DELETE INGREDIENT
+router.delete("/:id", async (req, res) => {
+  try {
+    let newIngredient = await Ingredient.findByIdAndRemove(req.params.id);
+    res.redirect("/ingredients");
   } catch (error) {
     res.send(error);
   }
