@@ -23,7 +23,7 @@
     <%} %> 
     <% for (let recipe of allRecipesFound ) { %>
         <li>
-            <%= recipe[0].name %>
+           <a href="/recipes/<%recipe[0]._id%>"><%= recipe[0].name %></a> 
         </li>
      <% } %>
     <% }%>
