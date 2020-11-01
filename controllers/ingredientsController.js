@@ -17,18 +17,21 @@ router.get("/new", (req, res) => {
 
 /*
 SHOW INGREDIENT
-if Ingredietn ID is NOT used in a recipe - allow delete button action
+if Ingredient ID is NOT used in a recipe - allow delete button action
 or return recipe name(s) ingredient is used in.
 */
 router.get("/:id", async (req, res) => {
   let canDelete = false;
-  let foundRec = "";
+  let allRecipesFound = new Array();
+let recfound =""
+
   let foundIng = await RecipeIngredient.find({ ingredient: req.params.id });
   if (foundIng === undefined || foundIng.length == 0) {
     canDelete = true;
   } else {
     for (let i = 0; i < foundIng.length; i++) {
-      foundRec = await Recipe.find({ recipeingredient: foundIng[i].id });
+     recfound = await Recipe.find({ recipeingredient: foundIng[i].id });
+      allRecipesFound.push(recfound)
       canDelete = false;
     }
   }
@@ -36,7 +39,7 @@ router.get("/:id", async (req, res) => {
   res.render("ingredients/show.ejs", {
     ingredient: foundIngredient,
     canDelete: canDelete,
-    foundRec: foundRec,
+    allRecipesFound: allRecipesFound,
   });
 });
 

@@ -16,14 +16,14 @@
         <input type="submit" value="Delete Ingredient" />
     </form>
 <% }else{%>
-    <% if ( foundRec >1){%>
+    <% if ( allRecipesFound.length >1){%>
         <p>Cannot delete - The ingredient is used in the following recipes: </p>
     <% }else{ %> 
         <p>Cannot delete - The ingredient is used in the following recipe: </p>
     <%} %> 
-    <% for (let recipe of foundRec ) { %>
+    <% for (let recipe of allRecipesFound ) { %>
         <li>
-            <%= recipe.name %>
+            <%= recipe[0].name %>
         </li>
      <% } %>
     <% }%>
