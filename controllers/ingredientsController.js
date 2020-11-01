@@ -17,8 +17,8 @@ router.get("/new", (req, res) => {
 
 /*
 SHOW INGREDIENT
-if ingredient is NOT used in a recipe - allow delete button action
-or return recipe name ingredient is used in. Pass in Ingredient ID
+if Ingredietn ID is NOT used in a recipe - allow delete button action
+or return recipe name(s) ingredient is used in.
 */
 router.get("/:id", async (req, res) => {
   let canDelete = false;
@@ -27,16 +27,11 @@ router.get("/:id", async (req, res) => {
   if (foundIng === undefined || foundIng.length == 0) {
     canDelete = true;
   } else {
-  for (let i = 0; i < foundIng.length; i++) {
-    foundRec = await Recipe.find({ recipeingredient: foundIng[i].id });
-    canDelete = false;
-    
+    for (let i = 0; i < foundIng.length; i++) {
+      foundRec = await Recipe.find({ recipeingredient: foundIng[i].id });
+      canDelete = false;
+    }
   }
-    
-  }
-  console.log(canDelete);
-  console.log(foundIng);
-  console.log(foundRec);
   let foundIngredient = await Ingredient.findById(req.params.id);
   res.render("ingredients/show.ejs", {
     ingredient: foundIngredient,
