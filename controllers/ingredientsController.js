@@ -84,7 +84,7 @@ router.post("/", async (req, res) => {
 //DELETE INGREDIENT
 router.delete("/:id", async (req, res) => {
   try {
-    let newIngredient = await Ingredient.findByIdAndRemove(req.params.id);
+    let deletedIngredient = await Ingredient.findByIdAndRemove(req.params.id);
     res.redirect("/ingredients");
   } catch (error) {
     res.send(error);

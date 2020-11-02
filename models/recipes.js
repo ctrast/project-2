@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const RecipeIngredient = require("../models/recipeIngredients.js");
+
 const recipeSchema = new mongoose.Schema(
   {
     name: {

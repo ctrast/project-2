@@ -33,8 +33,6 @@ router.get("/:id", async (req, res) => {
    
     recipeIngredientsFound.push(foundIngredients)
   }
-  console.log(foundRecipes)
-  console.log(recipeIngredientsFound)
   res.render("recipes/show.ejs", {
     recipe: foundRecipes, ingred: recipeIngredientsFound
   });
@@ -57,7 +55,6 @@ router.post("/", async (req, res) => {
        let newIngredient = new RecipeIngredient({ingredient: req.body.ingredient[i], measuretype:req.body.measuretype[i], measureqty: req.body.measureqty[i]})
        let recipeIngredientAdded = await RecipeIngredient.create(newIngredient)
        newRecipeIngredient.push(recipeIngredientAdded);
-       console.log(newRecipeIngredient)
       }
     }
   
@@ -65,6 +62,21 @@ router.post("/", async (req, res) => {
     let newRecipe = new Recipe({name: req.body.name, instruction: req.body.instruction, recipeingredient:newRecipeIngredient})
   let newlyAddedRecipe = await Recipe.create(newRecipe);
     res.redirect('/recipes');
+  } catch (error) {
+    res.send(error);
+  }
+});
+//DELETE RECIPE
+//delete the recipeingredient as well
+router.delete("/:id", async (req, res) => {
+ let deletedIngredients=""
+  try {
+    let deletedRecipe = await Recipe.findByIdAndDelete(req.params.id);
+    for(let i=0; i<deletedRecipe.recipeingredient.length; i++){
+      deletedIngredients = await RecipeIngredient.findByIdAndDelete(deletedRecipe.recipeingredient[i])
+    }    
+    console.log(deletedIngredients)
+    res.redirect("/recipes");
   } catch (error) {
     res.send(error);
   }

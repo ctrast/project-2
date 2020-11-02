@@ -13,7 +13,7 @@
           <% let date = new Date(recipe.createdAt); %> 
           <li>
             <a href="/recipes/<%=recipe.id%>" >
-              <%= recipe.name %><br><br>
+              <%= recipe.name %><br>
               <p> <%=date.toLocaleString('default', { month: 'long' })+" "+date.getDate()+", "+date.getFullYear()%><br>
                 <%=recipe.instruction%></p>
           </li>

@@ -13,13 +13,18 @@
     <h3><%= recipe.name  %></h3>
     
       <label for="instruction">Directions:</label>
-      <p name="instruction" id="instruction"><%= recipe.instruction %> </p>
+      <p><%= recipe.instruction %> </p>
      
-      <h5>Ingredients</h5>
+      <label>Ingredients</label>
         <% for (let i=0; i<ingred.length; i++) { %>
         <p><%=recipe.recipeingredient[i].measureqty%> <%=recipe.recipeingredient[i].measuretype%> <%=ingred[i][0].name%></p>
         <% } %>
-       </div>
+      
+
+       <form action="/recipes/<%=recipe.id%>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete Recipe" />
+       </form>
+      </div>
 </body>
 
 </html>
