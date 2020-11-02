@@ -2,6 +2,7 @@ const router = require('express').Router();
 const Recipe = require('../models/recipes');
 const Ingredient = require("../models/ingredients.js");
 const RecipeIngredient = require("../models/recipeIngredients.js");
+const recipeIngredients = require('../models/recipeIngredients.js');
 
 // const isAuthenticated = (req, res, next) => {
 //     if (req.session.currentUser) {
@@ -11,11 +12,35 @@ const RecipeIngredient = require("../models/recipeIngredients.js");
 //     }
 //   };
 
+
 //NEW
 router.get("/new", async (req, res) => {
   let ingredients = await Ingredient.find();
   res.render("recipes/new.ejs", {ingredients});
 });
+
+/*
+SHOW RECIPE
+*/
+router.get("/:id", async (req, res) => {
+  let recipeIngredientsFound = new Array();
+  let foundRecipes = new Array();
+  let foundIngredients
+ foundRecipes = await Recipe.findById(req.params.id).populate("recipeingredient");
+ 
+  for(let i=0 ; i<foundRecipes.recipeingredient.length; i++){
+    foundIngredients = await Ingredient.find(foundRecipes.recipeingredient[i].ingredient);
+   
+    recipeIngredientsFound.push(foundIngredients)
+  }
+  console.log(foundRecipes)
+  console.log(recipeIngredientsFound)
+  res.render("recipes/show.ejs", {
+    recipe: foundRecipes, ingred: recipeIngredientsFound
+  });
+});
+
+
 
 //INDEX
 router.get('/', async (req, res) => {
