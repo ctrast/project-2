@@ -10,10 +10,11 @@
     <div class="container">
       <ul>
         <% for (let recipe of recipes ) { %>
+          <% let date = new Date(recipe.createdAt); %> 
           <li>
             <a href="/recipes/<%=recipe.id%>" >
               <%= recipe.name %><br><br>
-              <p> <%=recipe.createdAt%><br>
+              <p> <%=date.toLocaleString('default', { month: 'long' })+" "+date.getDate()+", "+date.getFullYear()%><br>
                 <%=recipe.instruction%></p>
           </li>
        <% } %>
