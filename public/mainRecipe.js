@@ -4,7 +4,9 @@ const measureQty = document.querySelector("#measureqty");
 const ingredient = document.querySelector("#ingredient");
 const formDiv = document.querySelector("#ingredientCollection");
 const submitRecipe = document.querySelector('#submitRecipe');
-const recipe = document.querySelector('#recipe')
+const recipe = document.querySelector('#recipe');
+const recipeName = document.querySelector('#name');
+const recipeInstruction = document.querySelector('#instruction')
 
 
 submitRecipe.addEventListener("click", (e)=>{
@@ -44,15 +46,28 @@ if (!((measureType.value === 'none') || (measureQty.value ==='none') || (ingredi
   ing.value = ingredient.options[ingredient.selectedIndex].text;
   ingredient.selectedIndex = 0;
 
-  seperator=document.createElement("p")
-  seperator.textContent='|'
-
   formDiv.appendChild(newmeasureqty);
   formDiv.appendChild(newmeasuretype);
   formDiv.appendChild(ing);
-  formDiv.appendChild(seperator)
   formDiv.appendChild(ingId);
-
-  M.toast({html: 'Ingredient added!!'})
+  enableRecipeSubmit();
+  M.toast({html: 'Ingredient added!', classes: 'rounded'});
+ 
 }
 });
+
+function enableRecipeSubmit(){
+    console.log(recipeName.value)
+ if(!((recipeName.value==="") || (recipeInstruction.value ==="") || (formDiv.childElementCount === 4) )){
+    submitRecipe.style.display="block"
+ }
+
+    
+}
+
+function init(){
+    submitRecipe.style.display = "none"
+}
+
+init();
+
