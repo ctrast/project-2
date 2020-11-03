@@ -19,15 +19,15 @@
       <textarea name="instruction" id="instruction"></textarea>
 
 
-      <div id="ingredients" style="display: flex; flex-direction: row;">
+      <div id="ingredientCollection" >
 
       </div>
-      <button id="submitRecipe">Add Recipe</button> <br><br>
+      
     </form>
 
-<div id="ingredientgen">
+<div id="ingredientgen" >
     <label>Add Ingredients</label><br><br>
-    <p>To add an ingredient, select the ingredient, the amount, type of measurement, then click Add ngredient.</p>
+    <p>To add an ingredient, select the amount, type of measurement, ingredient then click Add Ingredient.</p>
  
     <label for="measureqty">Measurement Amount</label>
     <select class="form-control d-inline-block" style="display: block; width: 200px;" id="measureqty" name="measureqty">
@@ -44,6 +44,10 @@
       <option value="2 1/2">2 1/2</option>
       <option value="2 3/4">2 3/4</option>
       <option value="3">3</option>
+      <option value="4 1/4">4 1/4</option>
+      <option value="4 1/2">4 1/2</option>
+      <option value="4 3/4">4 3/4</option>
+      <option value="5">5</option>
     </select>
     <label for="measuretype">Measurement Type</label>
     <select class="form-control d-inline-block" style="display: block; width: 200px;" id="measuretype"
@@ -67,8 +71,10 @@
       <% } %>
     </select>
     
-   <button id="addIngredient">Add Ingredient</button>
+   <button id="addIngredient">Add Ingredient</button><br><br>
+   
   </div>
+  <button id="submitRecipe">Add Recipe</button> <br><br>
   <script src="/mainRecipe.js"></script>
 </body>
 

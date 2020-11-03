@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(212, 249, 249);
+}
+ #ingredientCollection input{
+     align-content: center;
+    pointer-events: none; 
+    border: none;
+    margin-left: 10px;
+    margin-right: 2px;
+    width: auto;
+    padding: none;
+    
+}
+#ingredientCollection{
+    display: flex;
+    flex-direction: row;
+  width: fit-content;
+    flex-wrap: wrap;
+}
+
+textarea{
+    margin-bottom: 40px;
+}
+#ingredientgen{
+    border: 5px solid dimgray;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+label{
+    font-size: medium;
+    color: black;
+}

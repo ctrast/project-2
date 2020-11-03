@@ -2,7 +2,7 @@ const addIngredient = document.querySelector("#addIngredient");
 const measureType = document.querySelector("#measuretype");
 const measureQty = document.querySelector("#measureqty");
 const ingredient = document.querySelector("#ingredient");
-const formDiv = document.querySelector("#ingredients");
+const formDiv = document.querySelector("#ingredientCollection");
 const submitRecipe = document.querySelector('#submitRecipe');
 const recipe = document.querySelector('#recipe')
 
@@ -44,9 +44,13 @@ if (!((measureType.value === 'none') || (measureQty.value ==='none') || (ingredi
   ing.value = ingredient.options[ingredient.selectedIndex].text;
   ingredient.selectedIndex = 0;
 
+  seperator=document.createElement("p")
+  seperator.textContent='|'
+
   formDiv.appendChild(newmeasureqty);
   formDiv.appendChild(newmeasuretype);
   formDiv.appendChild(ing);
+  formDiv.appendChild(seperator)
   formDiv.appendChild(ingId);
 
   M.toast({html: 'Ingredient added!!'})
