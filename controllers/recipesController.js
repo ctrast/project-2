@@ -48,14 +48,12 @@ router.get('/', async (req, res) => {
 
 //POST
 router.post("/", async (req, res) => {
- //console.log(req.body)
+ console.log(req.body)
  const newRecipeIngredient =[];
-    for(let i =0; i<req.body.ingredient.length;i++){
-      if(req.body.ingredient[i]!='none'){
-       let newIngredient = new RecipeIngredient({ingredient: req.body.ingredient[i], measuretype:req.body.measuretype[i], measureqty: req.body.measureqty[i]})
+    for(let i =0; i<req.body.measureqty.length;i++){
+       let newIngredient = new RecipeIngredient({ingredient: req.body.ingredient1[i], measuretype:req.body.measuretype[i], measureqty: req.body.measureqty[i]})
        let recipeIngredientAdded = await RecipeIngredient.create(newIngredient)
        newRecipeIngredient.push(recipeIngredientAdded);
-      }
     }
   
   try {

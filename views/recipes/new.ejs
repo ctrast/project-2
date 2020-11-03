@@ -11,15 +11,71 @@
   </nav>
   <div class="container">
     <h3>Add Recipe</h3>
-    <form action="/recipes" method="POST">
+    <form action="/recipes" method="POST" id="recipe">
       <label for="name">Name:</label>
       <input type="text" name="name" id="name" required />
 
       <label for="instruction">Directions:</label>
       <textarea name="instruction" id="instruction"></textarea>
-     
-      <h5>Add Ingredients</h5>
-   <% for (let i=0; i<=10; i++) { %> 
+
+
+      <div id="ingredients" style="display: flex; flex-direction: row;">
+
+      </div>
+      <button id="submitRecipe">Add Recipe</button> <br><br>
+    </form>
+
+<div id="ingredientgen">
+    <label>Add Ingredients</label><br><br>
+    <p>To add an ingredient, select the ingredient, the amount, type of measurement, then click Add ngredient.</p>
+ 
+    <label for="measureqty">Measurement Amount</label>
+    <select class="form-control d-inline-block" style="display: block; width: 200px;" id="measureqty" name="measureqty">
+      <option value="none" selected>--Select Amount--</option>
+      <option value="1/4">1/4</option>
+      <option value="1/2">1/2</option>
+      <option value="3/4">3/4</option>
+      <option value="1">1</option>
+      <option value="1 1/4">1 1/4</option>
+      <option value="1 1/2">1 1/2</option>
+      <option value="1 3/4">1 3/4</option>
+      <option value="2">2</option>
+      <option value="2 1/4">2 1/4</option>
+      <option value="2 1/2">2 1/2</option>
+      <option value="2 3/4">2 3/4</option>
+      <option value="3">3</option>
+    </select>
+    <label for="measuretype">Measurement Type</label>
+    <select class="form-control d-inline-block" style="display: block; width: 200px;" id="measuretype"
+      name="measuretype">
+      <option value="none" selected>--Select TYPE--</option>
+      <option value="EACH">EACH</option>
+      <option value="TSP">TSP</option>
+      <option value="TBLS">TBLS</option>
+      <option value="CUP">CUP</option>
+      <option value="OUNCE">OUNCE</option>
+      <option value="PINT">PINT</option>
+      <option value="QUART">QUART</option>
+      <option value="GALLON">GALLON</option>
+    </select>
+    <label for="ingredient">Ingredients</label>
+    <select class="form-control d-inline-block" style="display: block; width: 200px;" id="ingredient" name="ingredient">
+      <option value="none" selected>--Select INGREDIENT--</option>
+      <% ingredients.sort((a, b) => a.name.localeCompare(b.name));%>
+      <% for (let i=0; i<ingredients.length; i++) { %>
+      <option value="<%=ingredients[i]._id%>"> <%=ingredients[i].name%> </option>
+      <% } %>
+    </select>
+    
+   <button id="addIngredient">Add Ingredient</button>
+  </div>
+  <script src="/mainRecipe.js"></script>
+</body>
+
+</html>
+
+
+<!-- <% for (let i=0; i<=10; i++) { %> 
       <label for="measureqty">Measurement Amount</label>
       <select class="form-control d-inline-block" style="display: block; width: 200px;" id="measureqty" name="measureqty">
         <option value="none" selected>--Select Amount--</option>
@@ -59,11 +115,4 @@
       <br><br>
       <% } %>
       <br><br>
-      <input type="submit" value="Add Recipe"><br><br>
-    </form>
-        <br>
-        <p>To add an ingredient, select the ingredient, the amount, type of measurement, then click add ingredient.</p>
-  </div>
-</body>
-
-</html>
+      <input type="submit" value="Add Recipe"><br><br> -->
