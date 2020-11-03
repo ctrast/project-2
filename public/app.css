@@ -30,3 +30,18 @@ label{
     font-size: medium;
     color: black;
 }
+#recipeNameHp{
+    font-size: x-large;
+    color: darkslateblue;
+}
+#recipeDateHp{
+    margin-bottom: none;
+
+}
+#recipeInstructionsHp{
+    background-color: burlywood;
+    border: 2px solid darkgray;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: none;
+}

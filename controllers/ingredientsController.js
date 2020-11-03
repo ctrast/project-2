@@ -31,10 +31,14 @@ let recfound =""
   } else {
     for (let i = 0; i < foundIng.length; i++) {
      recfound = await Recipe.find({ recipeingredient: foundIng[i].id });
-      allRecipesFound.push(recfound)
+     console.log(`recfound ${recfound}`) 
+     if(recfound!=""){
+        allRecipesFound.push(recfound)
+      }
       canDelete = false;
     }
   }
+  console.log(allRecipesFound)
   let foundIngredient = await Ingredient.findById(req.params.id);
   res.render("ingredients/show.ejs", {
     ingredient: foundIngredient,
