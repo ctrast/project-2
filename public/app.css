@@ -1,57 +1,72 @@
-body{
-    background-color: #75DBCD;
+body {
+  background-color: #75dbcd;
 }
- #ingredientCollection input{
-    background-color: #75DBCD;
-     align-content: center;
-    pointer-events: none; 
-    border: none;
-    margin-left: 10px;
-    margin-right: px;
-    width: auto;
-    padding: none;
-    
+#ingredientCollection input {
+  background-color: #75dbcd;
+  align-content: center;
+  pointer-events: none;
+  border: none;
+  margin-left: 10px;
+  margin-right: px;
+  width: auto;
+  padding: none;
 }
-#ingredientCollection{
-    display: flex;
-    flex-direction: row;
+#ingredientCollection {
+  display: flex;
+  flex-direction: row;
   width: fit-content;
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-select{
-    background-color: #C9DBBA;
-    margin-right: 10px;
+select {
+  background-color: #c9dbba;
+  margin-right: 10px;
 }
-textarea, #name{
-    border-radius: 10px;
-    width: auto;
-    background-color:#75DBCD ;
+textarea,
+#name {
+  border-radius: 10px;
+  width: fit-content;
+  background-color: #75dbcd;
 }
-#ingredientgen{
-    border: 2px solid dimgray;
-    border-radius: 10px;
-    margin-bottom: 20px;
+#ingredientgen {
+  border: 2px solid dimgray;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
-label{
-    font-size: medium;
-    color: black;
+label {
+  font-size: medium;
+  color: black;
 }
-#recipeNameHp{
-    font-size: x-large;
-    color: black;
+#recipeNameHp {
+  font-size: x-large;
+  color: black;
+ 
+  
 }
-#recipeDateHp{
-    margin-bottom: none;
+#recipeDateHp {
+    float: right;
+  margin-bottom: none;
+}
 
+#buttons,
+#submitRecipe,
+#addIngredient {
+  height: auto;
+  padding: 2px;
 }
-#recipeInstructionsHp{
-    background-color:#C9DBBA;
-    padding: 5px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    margin-top: none;
+.containerHp ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
-#buttons,#submitRecipe,#addIngredient{
-    height: auto;
-    padding: 2px;
+.containerHp li {
+  margin-top: 10px;
+  border: 10px;
+  border-radius: 20px;
+  background-color: #c9dbba;
+  padding: 12px;
+  border-bottom: 1px solid black;
+}
+#recipeInstructionsHp {
+  border-top: 1px solid black;
 }
