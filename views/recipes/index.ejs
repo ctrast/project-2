@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-  <%- include ('../partials/head.ejs') %>
-</head>
-
 <body>
   <nav>
     <%- include ('../partials/nav.ejs') %>
@@ -15,12 +8,11 @@
       <% let date = new Date(recipe.createdAt); %>
       <li>
         <a href="/recipes/<%=recipe.id%>" id="recipeNameHp"><%= recipe.name %></a>
-        <div id="recipeDateHp"> <%=date.toLocaleString('default', { month: 'long' })+" "+date.getDate()+", "+date.getFullYear()%></div>
+        <div id="recipeDateHp">
+          <%=date.toLocaleString('default', { month: 'long' })+" "+date.getDate()+", "+date.getFullYear()%></div>
         <div id="recipeInstructionsHp"><%=recipe.instruction%></div>
       </li>
       <% } %>
     </ul>
   </div>
 </body>
-
-</html>

@@ -51,7 +51,7 @@ if (!((measureType.value === 'none') || (measureQty.value ==='none') || (ingredi
   formDiv.appendChild(ing);
   formDiv.appendChild(ingId);
   enableRecipeSubmit();
-  M.toast({html: 'Ingredient added!', classes: 'rounded'});
+  
  
 }
 });
@@ -71,7 +71,4 @@ function init(){
 
 init();
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.tooltipped');
-    var instances = M.Tooltip.init(elems, options);
-  });
+

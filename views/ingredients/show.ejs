@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <%- include ('../partials/head.ejs') %>
-</head>
 <body>
     <nav>
         <%- include ('../partials/nav.ejs') %>
@@ -10,24 +5,20 @@
     <div class="container">
         <h3>Ingredient</h3>
         <p><%=ingredient.name%></p>
-         <a href="/ingredients/<%=ingredient.id%>/edit" class="button">Edit Ingredient</a> <br><br><br>
-    <%if(canDelete){ %>
-         <form action="/ingredients/<%=ingredient.id%>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete Ingredient" />
-    </form
-<% }else{%>
-    <% if ( allRecipesFound.length >1){%>
-        <p>Cannot delete - The ingredient is used in the following recipes: </p>
-    <% }else{ %> 
+        <a href="/ingredients/<%=ingredient.id%>/edit" class="button">Edit Ingredient</a> <br><br><br>
+        <%if(canDelete){ %>
+        <form action="/ingredients/<%=ingredient.id%>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete Ingredient" />
+        </form <% }else{%> <% if ( allRecipesFound.length >1){%> <p>Cannot delete - The ingredient is used in the
+        following recipes: </p>
+        <% }else{ %>
         <p>Cannot delete - The ingredient is used in the following recipe: </p>
-    <%} %> 
-    <% for (let recipe of allRecipesFound ) { %>
+        <%} %>
+        <% for (let recipe of allRecipesFound ) { %>
         <li>
-           <a href="/recipes/<%=recipe[0]._id%>"><%= recipe[0].name %></a> 
+            <a href="/recipes/<%=recipe[0]._id%>"><%= recipe[0].name %></a>
         </li>
-     <% } %>
-    <% }%>
+        <% } %>
+        <% }%>
     </div>
 </body>
-
-</html>

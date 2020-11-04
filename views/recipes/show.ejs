@@ -1,30 +1,17 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-  <%- include ('../partials/head.ejs') %>
-</head>
-
 <body>
   <nav>
     <%- include ('../partials/nav.ejs') %>
   </nav>
   <div class="container">
     <h3><%= recipe.name  %></h3>
-    
-      <label for="instruction">Directions:</label>
-      <p><%= recipe.instruction %> </p>
-     
-      <label>Ingredients</label>
-        <% for (let i=0; i<ingred.length; i++) { %>
-        <p><%=recipe.recipeingredient[i].measureqty%> <%=recipe.recipeingredient[i].measuretype%> <%=ingred[i][0].name%></p>
-        <% } %>
-      
-
-       <form action="/recipes/<%=recipe.id%>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete Recipe" />
-       </form>
-      </div>
+    <label for="instruction">Directions:</label>
+    <p><%= recipe.instruction %> </p>
+    <label>Ingredients</label>
+    <% for (let i=0; i<ingred.length; i++) { %>
+    <p><%=recipe.recipeingredient[i].measureqty%> <%=recipe.recipeingredient[i].measuretype%> <%=ingred[i][0].name%></p>
+    <% } %>
+    <form action="/recipes/<%=recipe.id%>?_method=DELETE" method="POST">
+      <input type="submit" value="Delete Recipe" />
+    </form>
+  </div>
 </body>
-
-</html>
