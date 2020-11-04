@@ -18,7 +18,10 @@ body{
   width: fit-content;
     flex-wrap: wrap;
 }
-
+select{
+    background-color: #75DBCD;
+    margin-right: 10px;
+}
 textarea, #name{
     border-radius: 10px;
     width: auto;
@@ -48,6 +51,7 @@ label{
     margin-bottom: 20px;
     margin-top: none;
 }
-#ingredientbuttons{
-    margin-top: 10px;
+#buttons,#submitRecipe,#addIngredient{
+    height: auto;
+    padding: 2px;
 }

@@ -8,7 +8,7 @@
         <a href="/ingredients/<%=ingredient.id%>/edit" class="button">Edit Ingredient</a> <br><br><br>
         <%if(canDelete){ %>
         <form action="/ingredients/<%=ingredient.id%>?_method=DELETE" method="POST">
-            <input class="btn btn-primary" type="submit" value="Delete Ingredient" />
+            <input id="buttons" class="btn btn-primary" type="submit" value="Delete Ingredient" />
         </form <% }else{%> <% if ( allRecipesFound.length >1){%> <p>Cannot delete - The ingredient is used in the
         following recipes: </p>
         <% }else{ %>
