@@ -31,8 +31,6 @@ if (!((measureType.value === 'none') || (measureQty.value ==='none') || (ingredi
   newmeasureqty.value = measureQty.value;
   measureQty.selectedIndex = 0;
 
- 
-
   ingId = document.createElement("input");
   ingId.id= "ingredient";
   ingId.type="hidden"
@@ -51,19 +49,22 @@ if (!((measureType.value === 'none') || (measureQty.value ==='none') || (ingredi
   formDiv.appendChild(ing);
   formDiv.appendChild(ingId);
   enableRecipeSubmit();
-  
- 
 }
 });
 
+recipeInstruction.addEventListener('change', (e)=>{
+  enableRecipeSubmit();
+})
+recipeName.addEventListener('change', (e)=>{
+  enableRecipeSubmit();
+})
 function enableRecipeSubmit(){
     console.log(recipeName.value)
- if(!((recipeName.value==="") || (recipeInstruction.value ==="") || (formDiv.childElementCount === 4) )){
+ if(!((recipeName.value==="") || (recipeInstruction.value ==="") || (formDiv.childElementCount <=4) )){
     submitRecipe.style.display="block"
- }
-
-    
+ }    
 }
+
 
 function init(){
     submitRecipe.style.display = "none"

@@ -6,9 +6,10 @@
     <h3>Add Recipe</h3>
     <form action="/recipes" method="POST" id="recipe">
       <label for="name">Name:</label>
-      <input type="text" name="name" id="name" required />
+      <input type="text" name="name" id="name" required /><br><br>
+
       <label for="instruction">Directions:</label>
-      <textarea name="instruction" id="instruction"></textarea>
+      <textarea name="instruction" id="instruction" required></textarea>
       <div id="ingredientCollection">
       </div>
     </form>
@@ -18,7 +19,7 @@
       <p>To add an ingredient, select the amount, type of measurement, ingredient then click Add Ingredient.</p>
 
       <label for="measureqty">Measurement Amount</label>
-      <select class="form-control d-inline-block" style="display: block; width: 200px;" id="measureqty"
+      <select  id="measureqty"
         name="measureqty">
         <option value="none" selected>--Select Amount--</option>
         <option value="1/4">1/4</option>
@@ -39,7 +40,7 @@
         <option value="5">5</option>
       </select>
       <label for="measuretype">Measurement Type</label>
-      <select class="form-control d-inline-block" style="display: block; width: 200px;" id="measuretype"
+      <select  id="measuretype"
         name="measuretype">
         <option value="none" selected>--Select TYPE--</option>
         <option value="EACH">EACH</option>
@@ -53,7 +54,7 @@
         <option value="GALLON">GALLON</option>
       </select>
       <label for="ingredient">Ingredients</label>
-      <select class="form-control d-inline-block" style="display: block; width: 200px;" id="ingredient"
+      <select id="ingredient"
         name="ingredient">
         <option value="none" selected>--Select INGREDIENT--</option>
         <% ingredients.sort((a, b) => a.name.localeCompare(b.name));%>
@@ -62,9 +63,9 @@
         <% } %>
       </select>
 
-      <button id="addIngredient">Add Ingredient</button><br><br>
+      <button class="btn btn-primary" id="addIngredient">Add Ingredient</button><br><br>
 
     </div>
-    <button id="submitRecipe">Add Recipe</button> <br><br>
+    <button class="btn btn-primary" id="submitRecipe">Add Recipe</button> <br><br>
     <script src="/mainRecipe.js"></script>
 </body>

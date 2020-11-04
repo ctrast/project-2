@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-    <%- include ('../partials/head.ejs') %>
-</head>
-
 <body>
     <nav>
         <%- include ('../partials/nav.ejs') %>
@@ -14,9 +7,7 @@
         <form action="/ingredients/<%=ingredient.id%>?_method=PUT" method="POST">
             <label for="name">Ingredient Name:</label>
             <input type="text" name="name" id="name" required value="<%=ingredient.name%>" />
-            <input type="submit" value="Update">
+            <input id="ingredientbuttons" class="btn btn-primary" type="submit" value="Update">
             <form>
     </div>
 </body>
-
-</html>
