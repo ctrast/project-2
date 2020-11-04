@@ -53,13 +53,13 @@ label {
   height: auto;
   padding: 2px;
 }
-.containerHp ul {
+#containerHp ul {
   list-style-type: none;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-.containerHp li {
+#containerHp li {
   margin-top: 10px;
   border: 10px;
   border-radius: 20px;
@@ -69,5 +69,6 @@ label {
 }
 #recipeInstructionsHp {
   border-top: 1px solid black;
-  padding-top: 8px;
+  padding-top: 10px;
+  margin-top: 10px;
 }

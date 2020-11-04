@@ -2,7 +2,7 @@
   <nav>
     <%- include ('../partials/nav.ejs') %>
   </nav>
-  <div class="containerHp">
+  <div class="container" id="containerHp">
     <ul>
       <% for (let recipe of recipes ) { %>
       <% let date = new Date(recipe.createdAt); %>
