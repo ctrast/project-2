@@ -2,7 +2,7 @@
     <nav>
         <%- include ('../partials/nav.ejs') %>
     </nav>
-    <div class="container">
+    <div class="container" id="ingredientedit">
         <h3>Ingredient Edit Page</h3>
         <form action="/ingredients/<%=ingredient.id%>?_method=PUT" method="POST">
             <label for="name">Ingredient Name:</label>
