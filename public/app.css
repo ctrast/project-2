@@ -43,7 +43,7 @@ label{
 }
 #recipeInstructionsHp{
     background-color:#C9DBBA;
-    border: 2px solid#DCDBA8;
+    padding: 5px;
     border-radius: 10px;
     margin-bottom: 20px;
     margin-top: none;
