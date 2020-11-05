@@ -1,4 +1,4 @@
-# ![](/images/) **Recipes**
+# ![](https://www.flaticon.com/premium-icon/icons/svg/900/900864.svg) **Recipes**
 
 Recipes is a web site where users can add ingredients and create recipes using the ingredients.
 
