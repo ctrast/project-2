@@ -4,13 +4,6 @@ const Ingredient = require("../models/ingredients.js");
 const RecipeIngredient = require("../models/recipeIngredients.js");
 const recipeIngredients = require("../models/recipeIngredients.js");
 
-// const isAuthenticated = (req, res, next) => {
-//     if (req.session.currentUser) {
-//       return next();
-//     } else {
-//       res.redirect('/sessions/new');
-//     }
-//   };
 
 //NEW
 router.get("/new", async (req, res) => {
@@ -61,7 +54,6 @@ router.post("/", async (req, res) => {
     let recipeIngredientAdded = await RecipeIngredient.create(newIngredient);
     newRecipeIngredient.push(recipeIngredientAdded);
   }
-
   try {
     let newRecipe = new Recipe({
       name: req.body.name,
@@ -75,6 +67,9 @@ router.post("/", async (req, res) => {
     res.send(error);
   }
 });
+
+
+
 //DELETE RECIPE
 //delete the recipeingredient as well
 router.delete("/:id", async (req, res) => {
