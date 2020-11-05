@@ -78,6 +78,7 @@ HTML, CSS, JavaScript, Express, EJS, Mongoose, Mongo, Nodejs, Bootstrap
 * Express.js - this is the web application and API framework for Node.js 
 * Node.js - this is a runtime environment which executes JavaScript.
 * EJS - this is embedded JavaScript library which allows the usage of JavaScript inside of html content.
+* https://coolors.co/
 
 ## GitHub Project Repo
 <a href="https://github.com/ctrast/project-2" target="_blank">GitHub Project Repo</a>
