@@ -2,21 +2,26 @@
 
 Recipes is a web site where users can add ingredients and create recipes using the ingredients.
 
-### &#x1F535; URL
+### &#x1F535; APP URL
+<a href="https://cory-project2.herokuapp.com/recipes" target="_blank">APP URL</a>
 
-https://cory-project2.herokuapp.com/recipes
 
 ### &#x1F535; Approach 
 I began the project with the creation of User Stories for each required route and additional functionality which would make the site easy to use. I then designed the data schema for the Recipe, Recipe Ingredients and Ingredients. 
 
+<a href="https://github.com/ctrast/project-2/blob/main/docs/User%20Stories_Routes.pdf" target="_blank">USER STORIES & ROUTES</a>
 
-###### [USER STORIES & ROUTES](https://github.com/ctrast/project-2/blob/main/docs/User%20Stories_Routes.pdf)
-###### [RECIPE SCHEMA & MODELS](https://github.com/ctrast/project-2/blob/main/docs/Recipe%20Schema%20:%20Models.jpeg)
-###### [WIREFRAME RECIPE HOME](https://github.com/ctrast/project-2/blob/main/docs/Recipe%20WF%20-%20Recipe%20Home.jpeg)
-###### [WIREFRAME ADD RECIPE](https://github.com/ctrast/project-2/blob/main/docs/Recipe%20WF%20-%20Add%20Recipe.jpeg)
-###### [WIREFRAME EDIT RECIPE](https://github.com/ctrast/project-2/blob/main/docs/Recipe%20WF%20-%20Edit%20Recipe.jpeg)
-###### [WIREFRAME ADD INGREDIENT](https://github.com/ctrast/project-2/blob/main/docs/Recipe%20WF%20-%20Add%20Ingredient.jpeg)
-###### [WIREFRAME VIEW INGREDIENT](https://github.com/ctrast/project-2/blob/main/docs/Recipe%20WF%20-%20View%20Ingredient.jpeg)
+<a href="https://github.com/ctrast/project-2/blob/main/docs/Recipe%20Schema%20:%20Models.jpeg" target="_blank">RECIPE SCHEMA & MODELS</a>
+
+<a href="https://github.com/ctrast/project-2/blob/main/docs/Recipe%20WF%20-%20Recipe%20Home.jpeg" target="_blank">WIREFRAME RECIPE HOME</a>
+
+<a href="https://github.com/ctrast/project-2/blob/main/docs/Recipe%20WF%20-%20Add%20Recipe.jpeg" target="_blank">WIREFRAME ADD RECIPE</a>
+
+<a href="https://github.com/ctrast/project-2/blob/main/docs/Recipe%20WF%20-%20Edit%20Recipe.jpeg" target="_blank">WIREFRAME EDIT RECIPE</a>
+
+<a href="https://github.com/ctrast/project-2/blob/main/docs/Recipe%20WF%20-%20Add%20Ingredient.jpeg" target="_blank">WIREFRAME ADD INGREDIENT</a>
+
+<a href="https://github.com/ctrast/project-2/blob/main/docs/Recipe%20WF%20-%20View%20Ingredient.jpeg" target="_blank">WIREFRAME VIEW INGREDIENT</a>
 
 
 ### &#x1F535; Unsolved Problems
@@ -75,7 +80,8 @@ HTML, CSS, JavaScript, Express, EJS, Mongoose, Mongo, Nodejs, Bootstrap
 * EJS - this is embedded JavaScript library which allows the usage of JavaScript inside of html content.
 
 ## GitHub Project Repo
-https://github.com/ctrast/project-2
+<a href="https://github.com/ctrast/project-2" target="_blank">GitHub Project Repo</a>
+
 
 ## POST Recipe Route 
 
